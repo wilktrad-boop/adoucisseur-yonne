@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* La police Inter est chargée via next/font dans layout.tsx */
+/* Plus besoin de l'importer ici pour éviter la duplication */
+
+/* Amélioration de l'accessibilité : focus visible */
+*:focus-visible {
+  outline: 2px solid theme('colors.primary.600');
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth scroll pour une meilleure UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration du contraste et de la lisibilité */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+
+
+
+
+
+

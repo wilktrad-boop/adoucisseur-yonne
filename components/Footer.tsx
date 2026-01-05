@@ -1,0 +1,104 @@
+import Link from "next/link";
+import { siteConfig, villes } from "@/config/site";
+
+export default function Footer() {
+  const principalesVilles = villes.slice(0, 6).map((v) => v.nom).join(", ");
+
+  return (
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              {siteConfig.name}
+            </h3>
+            <p className="text-sm">
+              Installation et entretien d'adoucisseurs d'eau dans tout le
+              département de l'{siteConfig.departement.departementName}.
+            </p>
+            <p className="text-sm mt-4">
+              Interventions à {principalesVilles} et dans toute l'
+              {siteConfig.departement.departementName}.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Liens utiles</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/" className="hover:text-white transition">
+                  Accueil
+                </Link>
+              </li>
+              <li>
+                <Link href="/adoucisseur" className="hover:text-white transition">
+                  Adoucisseur d'eau
+                </Link>
+              </li>
+              <li>
+                <Link href="/entretien-adoucisseur" className="hover:text-white transition">
+                  Entretien
+                </Link>
+              </li>
+              <li>
+                <Link href="/depannage-adoucisseur" className="hover:text-white transition">
+                  Dépannage
+                </Link>
+              </li>
+              <li>
+                <Link href="/villes" className="hover:text-white transition">
+                  Villes desservies
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Informations légales</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/mentions-legales" className="hover:text-white transition">
+                  Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link href="/politique-confidentialite" className="hover:text-white transition">
+                  Politique de confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-white transition">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+          <p>
+            © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
