@@ -5,7 +5,8 @@
       "Bash(npm run dev:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Next.js site for Adoucisseur Yonne\n\n- Configure next.config.js pour Vercel (retiré standalone output)\n- Structure Next.js 14 avec App Router\n- Pages: adoucisseur, entretien, dépannage, prix, villes\n- Composants: LeadForm, Footer, CityList\n- Configuration Tailwind CSS\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Next.js site for Adoucisseur Yonne\n\n- Configure next.config.js pour Vercel (retiré standalone output)\n- Structure Next.js 14 avec App Router\n- Pages: adoucisseur, entretien, dépannage, prix, villes\n- Composants: LeadForm, Footer, CityList\n- Configuration Tailwind CSS\nEOF\n)\")",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
