@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Fermer le menu mobile lors du changement de route
   useEffect(() => {
@@ -36,6 +38,14 @@ export default function Header() {
   ];
 
   return (
+    <>
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/20 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -51,7 +61,12 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={`transition-colors pb-1 ${
+                  pathname === link.href
+                    ? "text-primary-600 border-b-2 border-primary-600 font-medium"
+                    : "text-gray-700 hover:text-primary-600"
+                }`}
               >
                 {link.label}
               </Link>
@@ -123,7 +138,12 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 rounded-lg hover:bg-gray-50"
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className={`transition-colors px-2 py-1 rounded-lg ${
+                    pathname === link.href
+                      ? "text-primary-600 bg-primary-50 font-medium"
+                      : "text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -141,6 +161,7 @@ export default function Header() {
         )}
       </div>
     </header>
+  </>
   );
 }
 

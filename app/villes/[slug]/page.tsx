@@ -4,6 +4,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import LeadForm from "@/components/LeadForm";
 import JsonLd from "@/components/JsonLd";
+import Breadcrumb from "@/components/Breadcrumb";
 import { siteConfig, getVilleBySlug, villes } from "@/config/site";
 import { departementConfig } from "@/config/departement";
 
@@ -52,25 +53,41 @@ export default async function VillePage({ params }: PageProps) {
     notFound();
   }
 
-  const serviceSchema = {
+  const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: "Installation d'adoucisseur d'eau",
-    provider: {
-      "@type": "HomeAndConstructionBusiness",
-      name: siteConfig.name,
+    "@type": "LocalBusiness",
+    name: siteConfig.name,
+    description: `Installation et entretien d'adoucisseurs d'eau à ${ville.nom}, ${departementConfig.departementName}.`,
+    url: `${siteConfig.domain}/villes/${ville.slug}`,
+    telephone: departementConfig.contact.phone,
+    email: departementConfig.contact.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: ville.nom,
+      postalCode: ville.codePostal,
+      addressRegion: departementConfig.departementName,
+      addressCountry: "FR",
     },
     areaServed: {
       "@type": "City",
       name: ville.nom,
       postalCode: ville.codePostal,
     },
-    description: `Installation et entretien d'adoucisseurs d'eau à ${ville.nom}, ${departementConfig.departementName}.`,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Services adoucisseur d'eau",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Installation d'adoucisseur d'eau" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Entretien d'adoucisseur d'eau" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Dépannage adoucisseur d'eau" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Remplacement adoucisseur d'eau" } },
+      ],
+    },
   };
 
   return (
     <>
-      <JsonLd data={serviceSchema} />
+      <JsonLd data={localBusinessSchema} />
 
       <Section className="relative bg-gradient-to-br from-primary-50 to-white py-12 overflow-hidden">
         {/* Image de fond avec opacité */}
@@ -88,6 +105,12 @@ export default async function VillePage({ params }: PageProps) {
 
         {/* Contenu au-dessus du fond */}
         <div className="relative z-10">
+          <Breadcrumb
+            items={[
+              { label: "Villes", href: "/villes" },
+              { label: ville.nom },
+            ]}
+          />
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Installation et entretien d'adoucisseurs d'eau à {ville.nom}
           </h1>
@@ -188,66 +211,49 @@ export default async function VillePage({ params }: PageProps) {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Nos services à {ville.nom}
             </h2>
-            <div className="text-gray-700 space-y-4">
-              <p>
-                Nous proposons une gamme complète de services pour votre adoucisseur d'eau à{" "}
-                {ville.nom} :
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>
-                    <Link
-                      href="/adoucisseur"
-                      className="text-primary-600 hover:text-primary-700"
-                    >
-                      Installation d'adoucisseur
-                    </Link>
-                  </strong>
-                  : Installation complète d'un adoucisseur adapté à vos besoins et à votre logement
-                </li>
-                <li>
-                  <strong>
-                    <Link
-                      href="/entretien-adoucisseur"
-                      className="text-primary-600 hover:text-primary-700"
-                    >
-                      Entretien régulier
-                    </Link>
-                  </strong>
-                  : Maintenance et vérification de votre adoucisseur pour garantir son bon
-                  fonctionnement
-                </li>
-                <li>
-                  <strong>
-                    <Link
-                      href="/depannage-adoucisseur"
-                      className="text-primary-600 hover:text-primary-700"
-                    >
-                      Dépannage et réparation
-                    </Link>
-                  </strong>
-                  : Intervention rapide en cas de panne ou de dysfonctionnement
-                </li>
-                <li>
-                  <strong>
-                    <Link
-                      href="/prix-adoucisseur"
-                      className="text-primary-600 hover:text-primary-700"
-                    >
-                      Remplacement
-                    </Link>
-                  </strong>
-                  : Remplacement d'un ancien adoucisseur par un modèle plus performant
-                </li>
-                <li>
-                  <strong>
-                    <Link href="/contact" className="text-primary-600 hover:text-primary-700">
-                      Conseil et diagnostic
-                    </Link>
-                  </strong>
-                  : Analyse de votre eau et conseils personnalisés pour choisir la meilleure solution
-                </li>
-              </ul>
+            <p className="text-gray-700 mb-6">
+              Nous proposons une gamme complète de services pour votre adoucisseur d'eau à{" "}
+              {ville.nom} :
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                {
+                  href: "/adoucisseur",
+                  title: "Installation d'adoucisseur",
+                  description: "Installation complète d'un adoucisseur adapté à vos besoins et à votre logement.",
+                  icon: "🔧",
+                },
+                {
+                  href: "/entretien-adoucisseur",
+                  title: "Entretien régulier",
+                  description: "Maintenance et vérification pour garantir le bon fonctionnement de votre appareil.",
+                  icon: "🛠️",
+                },
+                {
+                  href: "/depannage-adoucisseur",
+                  title: "Dépannage & réparation",
+                  description: "Intervention rapide en cas de panne ou de dysfonctionnement.",
+                  icon: "⚡",
+                },
+                {
+                  href: "/prix-adoucisseur",
+                  title: "Remplacement",
+                  description: "Remplacement d'un ancien adoucisseur par un modèle plus performant.",
+                  icon: "♻️",
+                },
+              ].map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-400 hover:shadow-md transition"
+                >
+                  <div className="text-2xl mb-2" aria-hidden="true">{service.icon}</div>
+                  <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1">
+                    {service.title}
+                  </p>
+                  <p className="text-sm text-gray-600">{service.description}</p>
+                </Link>
+              ))}
             </div>
           </section>
 
