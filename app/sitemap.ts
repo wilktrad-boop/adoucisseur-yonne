@@ -73,7 +73,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...villePages, ...guidePages];
+  const newPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/pfas-pesticides-eau-auxerre`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/qualite-eau-yonne`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/osmoseur-yonne`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+
+  return [...staticPages, ...newPages, ...villePages, ...guidePages];
 }
 
 
