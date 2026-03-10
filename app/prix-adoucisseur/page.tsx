@@ -203,6 +203,43 @@ export default function PrixPage() {
           </section>
 
           <section>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Devis adoucisseur dans l'Yonne : où établissons-nous des devis ?
+            </h2>
+            <div className="text-gray-700 space-y-4">
+              <p>
+                Nous établissons des devis gratuits dans tout le département de l'Yonne. La dureté
+                de l'eau varie selon les communes, ce qui influence le dimensionnement et le prix
+                de votre adoucisseur :
+              </p>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+                {[
+                  { href: "/villes/auxerre", label: "Auxerre (89000)", detail: "eau dure 25-35 TH" },
+                  { href: "/villes/sens", label: "Sens (89100)", detail: "eau très dure 28-38 TH" },
+                  { href: "/villes/joigny", label: "Joigny (89300)", detail: "eau dure 26-36 TH" },
+                  { href: "/villes/avallon", label: "Avallon (89200)", detail: "eau dure 24-34 TH" },
+                  { href: "/villes/migennes", label: "Migennes (89400)", detail: "eau très dure 27-37 TH" },
+                  { href: "/villes/tonnerre", label: "Tonnerre (89700)", detail: "eau dure 25-35 TH" },
+                  { href: "/villes/moneteau", label: "Monéteau (89470)", detail: "eau dure 25-34 TH" },
+                  { href: "/villes/villeneuve-sur-yonne", label: "Villeneuve-sur-Yonne (89500)", detail: "eau très dure 28-38 TH" },
+                ].map((ville) => (
+                  <li key={ville.href} className="bg-gray-50 rounded-lg p-3">
+                    <Link href={ville.href} className="text-primary-600 hover:text-primary-700 font-medium underline block">
+                      {ville.label}
+                    </Link>
+                    <span className="text-sm text-gray-500">{ville.detail}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4">
+                Plus l'eau est dure, plus l'adoucisseur doit être dimensionné en conséquence —
+                ce qui peut influencer le prix. Un devis personnalisé tient compte de la dureté
+                réelle de l'eau dans votre commune.
+              </p>
+            </div>
+          </section>
+
+          <section>
             <RelatedServices currentService="prix-adoucisseur" />
           </section>
         </div>

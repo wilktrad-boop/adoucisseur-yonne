@@ -1,4 +1,5 @@
 import { departementConfig } from "./departement";
+import type { FAQItem } from "@/data/faq";
 
 export const siteConfig = {
   name: departementConfig.siteName,
@@ -20,6 +21,7 @@ export interface Ville {
   referencesLocales?: string[]; // Références ou points d'intérêt locaux
   dureteEau?: string; // Dureté de l'eau en TH (Titre Hydrotimétrique)
   image?: string; // Chemin vers l'image de la ville
+  faq?: FAQItem[]; // FAQ spécifique à la ville
 }
 
 export const villes: Ville[] = [
@@ -30,7 +32,7 @@ export const villes: Ville[] = [
     zone: "Centre Yonne",
     image: "/technicien_hero.png",
     metaDescription:
-      "Installation et entretien d'adoucisseurs d'eau à Auxerre. Devis gratuit pour votre adoucisseur d'eau dans l'Yonne.",
+      "Adoucisseur d'eau à Auxerre (89000) — eau calcaire 25-35 TH et alerte PFAS. Installation, entretien et dépannage. Devis gratuit sous 24h.",
     quartiers: [
       "Centre-ville",
       "Les Conches",
@@ -38,14 +40,34 @@ export const villes: Ville[] = [
       "Les Brichères",
       "Rive droite",
       "Les Clairions",
+      "Saint-Amatre",
+      "Sainte-Geneviève",
     ],
     caracteristiquesEau:
-      "L'eau d'Auxerre est naturellement calcaire en raison des sols calcaires du bassin de l'Yonne. Un adoucisseur protège les équipements domestiques.",
+      "L'eau distribuée à Auxerre présente une double problématique : une dureté élevée de 25 à 35 TH due aux sols calcaires du bassin de l'Yonne, et une contamination aux PFAS (substances perfluoroalkylées) détectée par les autorités sanitaires. Auxerre figure parmi les villes françaises les plus touchées, avec 9 PFAS identifiés dont 2 classés cancérigènes probables. Sur le plan calcaire, le réseau d'Auxerre est alimenté par des captages souterrains dans les alluvions de l'Yonne et des nappes crayeuses, naturellement chargées en calcium et magnésium. À 25-35 TH, le tartre se dépose rapidement dans les chauffe-eaux, lave-linges et robinetteries.",
     dureteEau: "25-35 TH",
     referencesLocales: [
-      "Installations réalisées dans le quartier des Brichères",
+      "Installations réalisées dans le quartier des Brichères et Saint-Amatre",
       "Entretien récurrent pour des maisons individuelles à Rive droite",
       "Accompagnement de copropriétés proches du centre-ville",
+      "Pose d'osmoseurs après l'alerte PFAS pour des familles de Sainte-Geneviève",
+    ],
+    faq: [
+      {
+        question: "L'eau du robinet est-elle sûre à Auxerre ?",
+        answer:
+          "L'eau d'Auxerre est techniquement potable selon les normes en vigueur, mais 9 PFAS (polluants éternels) ont été détectés, dont 2 classés cancérigènes probables. Les autorités sanitaires suivent la situation. Pour une protection maximale contre ces contaminants, un osmoseur à osmose inverse est recommandé — contrairement à l'adoucisseur, qui traite uniquement le calcaire et ne filtre pas les PFAS. Consultez notre page dédiée aux PFAS et pesticides à Auxerre pour en savoir plus.",
+      },
+      {
+        question: "Quelle est la dureté de l'eau à Auxerre ?",
+        answer:
+          "La dureté de l'eau à Auxerre oscille entre 25 et 35 TH (Titre Hydrotimétrique) selon les quartiers et la saison. C'est une eau considérée comme dure à très dure (seuil à 15 TH). Les quartiers alimentés par les nappes crayeuses (Rive droite, Les Brichères) affichent les valeurs les plus élevées. Un adoucisseur bien dimensionné élimine ce calcaire et protège vos équipements.",
+      },
+      {
+        question: "Adoucisseur ou osmoseur à Auxerre : lequel choisir ?",
+        answer:
+          "Ces deux appareils répondent à des besoins différents. L'adoucisseur traite le calcaire (dureté 25-35 TH) pour protéger vos canalisations et appareils ménagers. L'osmoseur filtre les contaminants chimiques (PFAS, pesticides, nitrates) pour produire une eau de boisson de qualité. Face à la situation d'Auxerre, de nombreux foyers optent pour la combinaison des deux solutions. Nous proposons des devis gratuits pour les deux types d'installation.",
+      },
     ],
   },
   {

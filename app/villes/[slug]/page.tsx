@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import LeadForm from "@/components/LeadForm";
 import JsonLd from "@/components/JsonLd";
 import Breadcrumb from "@/components/Breadcrumb";
+import FAQ from "@/components/FAQ";
 import { siteConfig, getVilleBySlug, villes } from "@/config/site";
 import { departementConfig } from "@/config/departement";
 
@@ -276,6 +277,15 @@ export default async function VillePage({ params }: PageProps) {
               </div>
             </div>
           </section>
+
+          {ville.faq && ville.faq.length > 0 && (
+            <section>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Questions fréquentes sur l'adoucisseur d'eau à {ville.nom}
+              </h2>
+              <FAQ items={ville.faq} />
+            </section>
+          )}
 
           {ville.referencesLocales && ville.referencesLocales.length > 0 && (
             <section>
