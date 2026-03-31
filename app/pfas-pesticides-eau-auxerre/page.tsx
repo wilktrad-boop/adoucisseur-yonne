@@ -410,15 +410,37 @@ export default function PfasPesticidesEauAuxerrePage() {
         </Section>
       </div>
 
+      {/* Nos services */}
+      <Section className="bg-gray-50 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Nos services dans l&apos;Yonne
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: "/adoucisseur", title: "Installation adoucisseur", desc: "Pose complète et mise en service" },
+              { href: "/osmoseur-yonne", title: "Osmoseur et filtration", desc: "Filtre PFAS, pesticides, nitrates" },
+              { href: "/entretien-adoucisseur", title: "Entretien", desc: "Maintenance et révision régulière" },
+              { href: "/depannage-adoucisseur", title: "Dépannage", desc: "Intervention rapide en cas de panne" },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group block bg-white border border-gray-200 rounded-xl p-4 hover:border-primary-400 hover:shadow-md transition"
+              >
+                <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1 text-sm">
+                  {service.title}
+                </p>
+                <p className="text-xs text-gray-600">{service.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Liens connexes */}
       <Section className="py-10">
         <div className="max-w-4xl mx-auto flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/osmoseur-yonne"
-            className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
-          >
-            Osmoseur et filtration dans l&apos;Yonne →
-          </Link>
           <Link
             href="/qualite-eau-yonne"
             className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
@@ -430,6 +452,18 @@ export default function PfasPesticidesEauAuxerrePage() {
             className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
           >
             Adoucisseur à Auxerre →
+          </Link>
+          <Link
+            href="/guides"
+            className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+          >
+            Guides et conseils →
+          </Link>
+          <Link
+            href="/villes"
+            className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+          >
+            Toutes les villes desservies →
           </Link>
         </div>
       </Section>

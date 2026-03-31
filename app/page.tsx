@@ -365,8 +365,89 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Villes Section */}
+      {/* Section Qualité de l'eau */}
       <Section className="py-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            Qualité de l'eau dans l'Yonne
+          </h2>
+          <p className="text-center text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
+            L'eau de l'Yonne est naturellement calcaire et certaines communes sont touchées par des polluants. Informez-vous et protégez votre foyer.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link
+              href="/qualite-eau-yonne"
+              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-primary-500 hover:shadow-lg transition group"
+            >
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition">
+                Dureté de l'eau par commune
+              </h3>
+              <p className="text-gray-600 mb-4">
+                23 à 38 TH selon les zones. Découvrez la dureté de l'eau dans votre commune de l'Yonne.
+              </p>
+              <span className="text-primary-600 font-medium group-hover:underline">
+                Consulter la carte →
+              </span>
+            </Link>
+
+            <Link
+              href="/pfas-pesticides-eau-auxerre"
+              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-red-500 hover:shadow-lg transition group"
+            >
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600 transition">
+                Alerte PFAS à Auxerre
+              </h3>
+              <p className="text-gray-600 mb-4">
+                9 PFAS détectés dont 2 cancérigènes. Découvrez les solutions de filtration adaptées.
+              </p>
+              <span className="text-red-600 font-medium group-hover:underline">
+                En savoir plus →
+              </span>
+            </Link>
+
+            <Link
+              href="/osmoseur-yonne"
+              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-primary-500 hover:shadow-lg transition group"
+            >
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition">
+                Osmoseur et filtration
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Filtrez PFAS, pesticides et nitrates. Osmose inverse pour une eau pure à domicile.
+              </p>
+              <span className="text-primary-600 font-medium group-hover:underline">
+                Découvrir les solutions →
+              </span>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/guides"
+              className="text-primary-600 font-medium hover:underline text-lg"
+            >
+              Consulter tous nos guides et conseils →
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* Villes Section */}
+      <Section className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
             Nous intervenons dans tout l'{siteConfig.departement.departementName}

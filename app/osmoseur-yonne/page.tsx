@@ -435,6 +435,48 @@ export default function OsmoseurYonnePage() {
         </div>
       </Section>
 
+      {/* Nos autres services */}
+      <Section className="bg-gray-50 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Nos autres services dans l&apos;Yonne
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: "/adoucisseur", title: "Installation adoucisseur", desc: "Protégez vos canalisations du calcaire" },
+              { href: "/entretien-adoucisseur", title: "Entretien", desc: "Maintenance et révision régulière" },
+              { href: "/depannage-adoucisseur", title: "Dépannage", desc: "Intervention rapide en cas de panne" },
+              { href: "/prix-adoucisseur", title: "Prix et devis", desc: "Tarifs transparents et devis gratuit" },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group block bg-white border border-gray-200 rounded-xl p-4 hover:border-primary-400 hover:shadow-md transition"
+              >
+                <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1 text-sm">
+                  {service.title}
+                </p>
+                <p className="text-xs text-gray-600">{service.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center mt-6">
+            <Link
+              href="/guides"
+              className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+            >
+              Guides et conseils →
+            </Link>
+            <Link
+              href="/villes"
+              className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+            >
+              Toutes les villes desservies →
+            </Link>
+          </div>
+        </div>
+      </Section>
+
       {/* Devis */}
       <div id="devis">
         <Section className="bg-gradient-to-r from-blue-50 to-primary-50 py-14">

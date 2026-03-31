@@ -30,7 +30,7 @@ export const villes: Ville[] = [
     nom: "Auxerre",
     codePostal: "89000",
     zone: "Centre Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Adoucisseur d'eau à Auxerre (89000) — eau calcaire 25-35 TH et alerte PFAS. Installation, entretien et dépannage. Devis gratuit sous 24h.",
     quartiers: [
@@ -75,7 +75,7 @@ export const villes: Ville[] = [
     nom: "Sens",
     codePostal: "89100",
     zone: "Nord Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Sens. Prenez rendez-vous avec un expert local dans l'Yonne.",
     quartiers: [
@@ -100,7 +100,7 @@ export const villes: Ville[] = [
     nom: "Joigny",
     codePostal: "89300",
     zone: "Val de l'Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Joigny et dans les communes voisines de la vallée de l'Yonne.",
     quartiers: [
@@ -125,7 +125,7 @@ export const villes: Ville[] = [
     nom: "Avallon",
     codePostal: "89200",
     zone: "Sud Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Avallon. Intervention rapide dans tout le sud de l'Yonne.",
     quartiers: [
@@ -150,7 +150,7 @@ export const villes: Ville[] = [
     nom: "Migennes",
     codePostal: "89400",
     zone: "Vallée de l'Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Migennes. Devis gratuit pour les particuliers et professionnels du 89.",
     quartiers: [
@@ -173,7 +173,7 @@ export const villes: Ville[] = [
     nom: "Tonnerre",
     codePostal: "89700",
     zone: "Tonnerrois",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Tonnerre et dans le Tonnerrois.",
     quartiers: [
@@ -196,7 +196,7 @@ export const villes: Ville[] = [
     nom: "Monéteau",
     codePostal: "89470",
     zone: "Agglo d'Auxerre",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Monéteau, au nord d'Auxerre.",
     quartiers: [
@@ -219,7 +219,7 @@ export const villes: Ville[] = [
     nom: "Villeneuve-sur-Yonne",
     codePostal: "89500",
     zone: "Nord Yonne",
-    image: "/technicien_hero.png",
+    image: "/technicien_hero_bg.jpg",
     metaDescription:
       "Installation et entretien d'adoucisseurs d'eau à Villeneuve-sur-Yonne. Service réactif dans tout le nord du département.",
     quartiers: [

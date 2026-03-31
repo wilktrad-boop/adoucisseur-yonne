@@ -29,9 +29,11 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Accueil" },
     { href: "/adoucisseur", label: "Adoucisseur" },
+    { href: "/osmoseur-yonne", label: "Osmoseur" },
     { href: "/entretien-adoucisseur", label: "Entretien" },
     { href: "/depannage-adoucisseur", label: "Dépannage" },
     { href: "/prix-adoucisseur", label: "Prix" },
+    { href: "/qualite-eau-yonne", label: "Qualité eau" },
     { href: "/guides", label: "Guides" },
     { href: "/villes", label: "Villes" },
     { href: "/contact", label: "Contact" },

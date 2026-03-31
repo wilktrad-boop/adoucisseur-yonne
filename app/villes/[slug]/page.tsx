@@ -331,14 +331,60 @@ export default async function VillePage({ params }: PageProps) {
         </div>
       </Section>
 
-      <Section>
-        <div className="text-center">
-          <Link
-            href="/villes"
-            className="text-primary-600 hover:text-primary-700 font-semibold"
-          >
-            ← Retour à la liste des villes
-          </Link>
+      {/* Liens contextuels */}
+      <Section className="py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            En savoir plus sur l'eau dans l'Yonne
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link
+              href="/qualite-eau-yonne"
+              className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-400 hover:shadow-md transition"
+            >
+              <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1">
+                Qualité et dureté de l'eau dans l'Yonne
+              </p>
+              <p className="text-sm text-gray-600">Carte TH par zone et solutions adaptées</p>
+            </Link>
+            {ville.slug === "auxerre" && (
+              <Link
+                href="/pfas-pesticides-eau-auxerre"
+                className="group block bg-white border border-red-200 rounded-xl p-5 hover:border-red-400 hover:shadow-md transition"
+              >
+                <p className="font-semibold text-gray-900 group-hover:text-red-600 transition mb-1">
+                  Alerte PFAS et pesticides à Auxerre
+                </p>
+                <p className="text-sm text-gray-600">9 polluants détectés — solutions de filtration</p>
+              </Link>
+            )}
+            <Link
+              href="/osmoseur-yonne"
+              className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-400 hover:shadow-md transition"
+            >
+              <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1">
+                Osmoseur et filtration de l'eau
+              </p>
+              <p className="text-sm text-gray-600">Filtrez PFAS, pesticides et nitrates</p>
+            </Link>
+            <Link
+              href="/guides"
+              className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-primary-400 hover:shadow-md transition"
+            >
+              <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1">
+                Guides et conseils
+              </p>
+              <p className="text-sm text-gray-600">Choisir, entretenir et économiser avec un adoucisseur</p>
+            </Link>
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/villes"
+              className="text-primary-600 hover:text-primary-700 font-semibold"
+            >
+              ← Retour à la liste des villes
+            </Link>
+          </div>
         </div>
       </Section>
     </>

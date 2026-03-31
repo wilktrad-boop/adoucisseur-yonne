@@ -23,16 +23,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Liens utiles</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">Nos services</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="hover:text-white transition">
-                  Accueil
-                </Link>
-              </li>
               <li>
                 <Link href="/adoucisseur" className="hover:text-white transition">
                   Adoucisseur d'eau
+                </Link>
+              </li>
+              <li>
+                <Link href="/osmoseur-yonne" className="hover:text-white transition">
+                  Osmoseur et filtration
                 </Link>
               </li>
               <li>
@@ -43,6 +43,30 @@ export default function Footer() {
               <li>
                 <Link href="/depannage-adoucisseur" className="hover:text-white transition">
                   Dépannage
+                </Link>
+              </li>
+              <li>
+                <Link href="/prix-adoucisseur" className="hover:text-white transition">
+                  Prix et devis
+                </Link>
+              </li>
+            </ul>
+
+            <h3 className="text-white text-lg font-semibold mb-4 mt-6">Ressources</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/qualite-eau-yonne" className="hover:text-white transition">
+                  Qualité de l'eau dans l'Yonne
+                </Link>
+              </li>
+              <li>
+                <Link href="/pfas-pesticides-eau-auxerre" className="hover:text-white transition">
+                  PFAS et pesticides à Auxerre
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides" className="hover:text-white transition">
+                  Guides et conseils
                 </Link>
               </li>
               <li>

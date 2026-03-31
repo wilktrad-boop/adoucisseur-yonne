@@ -457,8 +457,50 @@ export default function QualiteEauYonnePage() {
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* Nos services */}
       <Section className="py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            Nos services de traitement de l&apos;eau
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {[
+              { href: "/adoucisseur", title: "Installation adoucisseur", desc: "Protégez vos canalisations du calcaire" },
+              { href: "/osmoseur-yonne", title: "Osmoseur et filtration", desc: "Filtre PFAS, pesticides, nitrates" },
+              { href: "/entretien-adoucisseur", title: "Entretien", desc: "Maintenance et révision régulière" },
+              { href: "/depannage-adoucisseur", title: "Dépannage", desc: "Intervention rapide en cas de panne" },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group block bg-white border border-gray-200 rounded-xl p-4 hover:border-primary-400 hover:shadow-md transition"
+              >
+                <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1 text-sm">
+                  {service.title}
+                </p>
+                <p className="text-xs text-gray-600">{service.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link
+              href="/guides"
+              className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+            >
+              Guides et conseils →
+            </Link>
+            <Link
+              href="/prix-adoucisseur"
+              className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-4 text-sm"
+            >
+              Prix et devis →
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* CTA */}
+      <Section className="bg-gray-50 py-12">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
             Testez la dureté de votre eau gratuitement

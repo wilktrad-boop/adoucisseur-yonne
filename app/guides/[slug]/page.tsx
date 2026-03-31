@@ -184,6 +184,30 @@ export default async function GuidePage({ params }: PageProps) {
             </Link>
           </div>
 
+          {/* Nos services */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Nos services dans l'Yonne</h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { href: "/adoucisseur", title: "Installation d'adoucisseur", desc: "Pose complète et mise en service" },
+                { href: "/entretien-adoucisseur", title: "Entretien d'adoucisseur", desc: "Maintenance et révision régulière" },
+                { href: "/depannage-adoucisseur", title: "Dépannage", desc: "Intervention rapide en cas de panne" },
+                { href: "/osmoseur-yonne", title: "Osmoseur et filtration", desc: "Filtrez PFAS, pesticides et nitrates" },
+              ].map((service) => (
+                <Link
+                  key={service.href}
+                  href={service.href}
+                  className="group block bg-white border border-gray-200 rounded-xl p-4 hover:border-primary-400 hover:shadow-md transition"
+                >
+                  <p className="font-semibold text-gray-900 group-hover:text-primary-600 transition mb-1">
+                    {service.title}
+                  </p>
+                  <p className="text-sm text-gray-600">{service.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Articles liés */}
           {relatedGuides.length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200">
