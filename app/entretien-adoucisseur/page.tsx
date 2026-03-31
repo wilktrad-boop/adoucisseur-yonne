@@ -2,24 +2,58 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import LeadForm from "@/components/LeadForm";
+import FAQ from "@/components/FAQ";
 import JsonLd from "@/components/JsonLd";
 import RelatedServices from "@/components/RelatedServices";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Entretien adoucisseur d'eau dans l'Yonne - Maintenance et révision",
+  title: "Entretien adoucisseur d'eau dans l'Yonne (89) — Maintenance, révision, contrat",
   description:
-    "Entretien régulier de votre adoucisseur d'eau dans l'Yonne. Fréquence, signes d'alerte, coûts. Service d'entretien professionnel à Auxerre, Sens, Joigny et dans tout le 89.",
+    "Entretien et révision d'adoucisseur dans l'Yonne : fréquence, coûts, contrat. Service professionnel à Auxerre, Sens, Joigny et dans tout le 89. Devis gratuit sous 24h.",
   alternates: {
     canonical: "/entretien-adoucisseur",
   },
   openGraph: {
-    title: "Entretien adoucisseur d'eau dans l'Yonne - Maintenance et révision",
+    title: "Entretien adoucisseur d'eau dans l'Yonne (89) — Maintenance, révision, contrat",
     description:
-      "Entretien régulier de votre adoucisseur d'eau dans l'Yonne. Service professionnel disponible.",
+      "Entretien et révision d'adoucisseur dans l'Yonne. Auxerre, Sens, Joigny. Devis gratuit sous 24h.",
     url: `${siteConfig.domain}/entretien-adoucisseur`,
   },
 };
+
+const faqItems = [
+  {
+    question: "À quelle fréquence faut-il entretenir un adoucisseur dans l'Yonne ?",
+    answer:
+      "Dans l'Yonne, où l'eau est dure à très dure (23-38 TH selon les zones), un entretien annuel est recommandé. Pour les zones les plus calcaires (Sens 28-38 TH, Joigny 26-37 TH), deux révisions par an peuvent être nécessaires. L'entretien comprend la vérification de la résine, le nettoyage du bac à sel, le test de dureté et le contrôle de la programmation.",
+  },
+  {
+    question: "Combien coûte l'entretien d'un adoucisseur dans l'Yonne ?",
+    answer:
+      "Un entretien annuel d'adoucisseur dans l'Yonne coûte généralement entre 80 € et 150 € selon le modèle et les interventions nécessaires. Un contrat d'entretien annuel est souvent plus avantageux et inclut les visites programmées plus une intervention d'urgence en cas de panne. Contactez-nous pour un devis gratuit.",
+  },
+  {
+    question: "Quels sont les signes que mon adoucisseur dans l'Yonne doit être entretenu ?",
+    answer:
+      "Les principaux signes sont : retour du calcaire visible sur les robinets et la douche, sel qui se consomme plus ou moins vite qu'habituellement, goût ou odeur inhabituel de l'eau, bruits lors de la régénération, eau trouble. Dans l'Yonne, avec une eau dure de 23-38 TH, ces signes apparaissent plus vite qu'avec une eau douce.",
+  },
+  {
+    question: "Peut-on entretenir son adoucisseur soi-même dans l'Yonne ?",
+    answer:
+      "Vous pouvez effectuer quelques opérations simples : vérifier et recharger le sel, nettoyer le bac à sel si une croûte de sel se forme, et effectuer un test de dureté. En revanche, la vérification de la résine, le réglage de la programmation et les interventions sur les vannes nécessitent un technicien professionnel.",
+  },
+  {
+    question: "Mon adoucisseur est neuf — dois-je quand même l'entretenir ?",
+    answer:
+      "Oui. Même un adoucisseur neuf doit être entretenu dès la première année. Dans l'Yonne, la forte dureté de l'eau (23-38 TH) fatigue davantage la résine. Un premier entretien 6 à 12 mois après l'installation permet de vérifier les réglages, nettoyer la résine si nécessaire, et adapter la programmation à votre consommation réelle.",
+  },
+  {
+    question: "Dans quelles villes de l'Yonne intervenez-vous pour l'entretien ?",
+    answer:
+      "Nous intervenons dans tout le département de l'Yonne : Auxerre, Sens, Joigny, Avallon, Migennes, Tonnerre, Monéteau, Villeneuve-sur-Yonne et toutes les communes du 89. Délai d'intervention sous 48-72h pour un entretien programmé, intervention rapide en cas d'urgence.",
+  },
+];
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -28,23 +62,41 @@ const serviceSchema = {
   provider: {
     "@type": "HomeAndConstructionBusiness",
     name: siteConfig.name,
+    telephone: siteConfig.contact.phone,
+    url: siteConfig.domain,
   },
   areaServed: {
-    "@type": "State",
-    name: siteConfig.departement.departementName,
+    "@type": "AdministrativeArea",
+    name: "Yonne",
   },
   description:
     "Service d'entretien et de maintenance d'adoucisseurs d'eau dans le département de l'Yonne.",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
 export default function EntretienPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      
+      <JsonLd data={faqSchema} />
+
       <Section className="bg-gradient-to-br from-primary-50 to-white py-12">
+        <nav className="text-sm text-gray-500 mb-4" aria-label="Fil d'Ariane">
+          <Link href="/" className="hover:text-primary-600">Accueil</Link>
+          <span className="mx-2">/</span>
+          <span>Entretien adoucisseur d'eau dans l'Yonne</span>
+        </nav>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Entretien d'adoucisseur d'eau dans l'Yonne
+          Entretien d'adoucisseur d'eau dans l'Yonne (89)
         </h1>
         <p className="text-lg text-gray-700 max-w-3xl">
           Un entretien régulier est essentiel pour garantir le bon fonctionnement et la durée de vie
@@ -258,6 +310,13 @@ export default function EntretienPage() {
                 vie de votre appareil.
               </p>
             </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Questions fréquentes sur l'entretien d'adoucisseur dans l'Yonne
+            </h2>
+            <FAQ items={faqItems} />
           </section>
 
           <section>

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: siteConfig.domain,
     images: [
       {
-        url: `${siteConfig.domain}/technicien_hero.png`,
+        url: `${siteConfig.domain}/technicien_hero.webp`,
         width: 1200,
         height: 630,
         alt: siteConfig.departement.seo.ogImageAlt,
@@ -50,13 +50,13 @@ export default function Home() {
         {/* Image de fond optimisée */}
         <div className="absolute inset-0">
           <Image
-            src="/technicien_hero.png"
+            src="/technicien_hero.webp"
             alt="Technicien professionnel installant un adoucisseur d'eau dans l'Yonne"
             fill
             priority
             className="object-cover"
             sizes="100vw"
-            quality={90}
+            quality={85}
           />
         </div>
         {/* Overlay sombre avec opacité forte */}

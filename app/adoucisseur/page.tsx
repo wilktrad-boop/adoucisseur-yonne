@@ -2,24 +2,58 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import LeadForm from "@/components/LeadForm";
+import FAQ from "@/components/FAQ";
 import JsonLd from "@/components/JsonLd";
 import RelatedServices from "@/components/RelatedServices";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Adoucisseur d'eau dans l'Yonne - Installation et conseils",
+  title: "Adoucisseur d'eau dans l'Yonne (89) — Installation, devis gratuit",
   description:
-    "Tout savoir sur l'adoucisseur d'eau dans l'Yonne : fonctionnement, types d'adoucisseurs, avantages. Devis gratuit pour l'installation d'un adoucisseur à Auxerre, Sens, Joigny et dans tout le 89.",
+    "Installez un adoucisseur d'eau dans l'Yonne : eau dure 23-38 TH à Auxerre, Sens, Joigny, Avallon. Devis gratuit sous 24h, intervention dans tout le département 89.",
   alternates: {
     canonical: "/adoucisseur",
   },
   openGraph: {
-    title: "Adoucisseur d'eau dans l'Yonne - Installation et conseils",
+    title: "Adoucisseur d'eau dans l'Yonne (89) — Installation, devis gratuit",
     description:
-      "Tout savoir sur l'adoucisseur d'eau dans l'Yonne : fonctionnement, types d'adoucisseurs, avantages.",
+      "Installation d'adoucisseur dans l'Yonne : eau dure 23-38 TH. Auxerre, Sens, Joigny, Avallon. Devis gratuit sous 24h.",
     url: `${siteConfig.domain}/adoucisseur`,
   },
 };
+
+const faqItems = [
+  {
+    question: "Pourquoi l'eau est-elle calcaire dans l'Yonne ?",
+    answer:
+      "L'eau dans l'Yonne est calcaire en raison de la géologie bourguignonne. Les nappes souterraines traversent des formations calcaires et crayeuses typiques du bassin parisien et du Morvan qui enrichissent l'eau en calcium et magnésium. La dureté varie de 23 à 38 TH selon les communes : plus élevée dans le Nord Yonne (Sens, 28-38 TH), plus modérée en Sud Yonne (Avallon, 24-34 TH).",
+  },
+  {
+    question: "Combien coûte un adoucisseur d'eau dans l'Yonne ?",
+    answer:
+      "Le prix d'un adoucisseur installé dans l'Yonne varie entre 900 € et 2 500 € fourni et posé selon la capacité de l'appareil, le nombre d'occupants et la dureté locale de l'eau. Nous établissons un devis gratuit et personnalisé sous 24h. Pour Auxerre et sa double problématique (calcaire + PFAS), la combinaison adoucisseur + osmoseur représente la solution la plus complète.",
+  },
+  {
+    question: "L'eau d'Auxerre est-elle particulièrement dure ?",
+    answer:
+      "L'eau d'Auxerre présente une dureté de 23 à 35 TH, classée dans la catégorie 'dure'. En plus du calcaire, Auxerre figure parmi les 5 villes de France les plus touchées par les PFAS (9 polluants détectés dont 2 cancérigènes). Pour Auxerre, nous recommandons une solution combinée : adoucisseur pour le calcaire + osmoseur pour filtrer les PFAS et pesticides.",
+  },
+  {
+    question: "Peut-on installer un adoucisseur à Sens ou Joigny ?",
+    answer:
+      "Oui, nous intervenons dans toutes les communes de l'Yonne. Le Nord Yonne (Sens 28-38 TH, Joigny 26-37 TH) présente l'eau la plus dure du département. À ces niveaux, un adoucisseur est fortement recommandé pour protéger vos équipements électroménagers, canalisations et chauffe-eau. Devis gratuit sous 24h.",
+  },
+  {
+    question: "Peut-on installer un adoucisseur en appartement dans l'Yonne ?",
+    answer:
+      "Oui, l'installation est possible en appartement dès lors qu'on accède à l'arrivée d'eau froide du logement. Nos techniciens interviennent régulièrement dans les immeubles d'Auxerre, Sens et des communes de l'Yonne. Dans certaines copropriétés, une solution centralisée peut être envisagée avec l'accord du syndic.",
+  },
+  {
+    question: "Quelle dureté d'eau recommandez-vous en sortie d'adoucisseur ?",
+    answer:
+      "Un adoucisseur bien réglé produit une eau entre 8 et 15 TH. En dessous de 8 TH, l'eau peut être légèrement agressive pour les canalisations en cuivre. Nos techniciens règlent l'appareil précisément selon la dureté initiale mesurée chez vous et vos préférences d'utilisation.",
+  },
+];
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -28,30 +62,47 @@ const serviceSchema = {
   provider: {
     "@type": "HomeAndConstructionBusiness",
     name: siteConfig.name,
+    telephone: siteConfig.contact.phone,
+    url: siteConfig.domain,
   },
   areaServed: {
-    "@type": "State",
-    name: siteConfig.departement.departementName,
+    "@type": "AdministrativeArea",
+    name: "Yonne",
   },
   description:
     "Installation d'adoucisseurs d'eau dans le département de l'Yonne. Devis gratuit et personnalisé.",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
 export default function AdoucisseurPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
-      
+      <JsonLd data={faqSchema} />
+
       <Section className="bg-gradient-to-br from-primary-50 to-white py-12">
+        <nav className="text-sm text-gray-500 mb-4" aria-label="Fil d'Ariane">
+          <Link href="/" className="hover:text-primary-600">Accueil</Link>
+          <span className="mx-2">/</span>
+          <span>Installation adoucisseur d'eau dans l'Yonne</span>
+        </nav>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Adoucisseur d'eau dans l'Yonne
+          Adoucisseur d'eau dans l'Yonne (89)
         </h1>
         <p className="text-lg text-gray-700 max-w-3xl">
-          L'eau de l'{siteConfig.departement.departementName} est naturellement riche en calcaire,
-          ce qui peut poser des problèmes au quotidien. Un adoucisseur d'eau permet de réduire la
-          dureté de l'eau, protégeant ainsi votre installation et améliorant votre confort.
-          Découvrez tout ce qu'il faut savoir sur l'adoucisseur d'eau et comment choisir le modèle
-          adapté à vos besoins.
+          L'eau de l'Yonne est calcaire (23 à 38 TH selon les zones), ce qui peut poser des
+          problèmes au quotidien. Un adoucisseur d'eau permet de réduire la dureté de l'eau,
+          protégeant ainsi votre installation et améliorant votre confort. Découvrez tout ce
+          qu'il faut savoir sur l'adoucisseur d'eau et comment choisir le modèle adapté à vos besoins.
         </p>
       </Section>
 
@@ -184,6 +235,13 @@ export default function AdoucisseurPage() {
                 </Link>.
               </p>
             </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Questions fréquentes sur l'adoucisseur dans l'Yonne
+            </h2>
+            <FAQ items={faqItems} />
           </section>
 
           <section>
