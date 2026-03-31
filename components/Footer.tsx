@@ -101,6 +101,30 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+
+            <h3 className="text-white text-lg font-semibold mb-4 mt-6">Nos partenaires en Auvergne-Rhône-Alpes</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a href="https://valence-adoucisseur.fr/" target="_blank" rel="noopener" className="hover:text-white transition">
+                  Adoucisseur à Valence
+                </a>
+              </li>
+              <li>
+                <a href="https://www.adoucisseur-isere.fr/" target="_blank" rel="noopener" className="hover:text-white transition">
+                  Adoucisseur en Isère
+                </a>
+              </li>
+              <li>
+                <a href="https://adoucisseur-haute-savoie.fr/" target="_blank" rel="noopener" className="hover:text-white transition">
+                  Adoucisseur en Haute-Savoie
+                </a>
+              </li>
+              <li>
+                <a href="https://www.adoucisseur-ain.fr/" target="_blank" rel="noopener" className="hover:text-white transition">
+                  Adoucisseur dans l'Ain
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
