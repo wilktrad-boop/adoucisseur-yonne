@@ -301,7 +301,7 @@ export default function Home() {
           <p className="text-center text-gray-600 mb-12 text-lg max-w-2xl mx-auto">
             Des solutions complètes pour tous vos besoins en adoucisseur d'eau
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link
               href="/adoucisseur"
               className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-primary-500 hover:shadow-lg transition group"
@@ -313,6 +313,21 @@ export default function Home() {
                 Installation complète d'adoucisseur d'eau adapté à votre logement dans l'Yonne
               </p>
               <span className="text-primary-600 font-medium group-hover:underline">
+                En savoir plus →
+              </span>
+            </Link>
+
+            <Link
+              href="/adoucisseur-ecologique-yonne"
+              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-green-500 hover:shadow-lg transition group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition">
+                Adoucisseur écologique
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Solutions sans sel : CO2, magnétique, électronique. Respectueux de l'environnement
+              </p>
+              <span className="text-green-600 font-medium group-hover:underline">
                 En savoir plus →
               </span>
             </Link>
@@ -343,6 +358,21 @@ export default function Home() {
                 Intervention rapide dans le département pour réparer votre adoucisseur
               </p>
               <span className="text-primary-600 font-medium group-hover:underline">
+                En savoir plus →
+              </span>
+            </Link>
+
+            <Link
+              href="/detartrage-yonne"
+              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:border-orange-500 hover:shadow-lg transition group"
+            >
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition">
+                Détartrage
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Détartrage chauffe-eau, canalisations et robinetterie. Traitement anti-calcaire curatif
+              </p>
+              <span className="text-orange-600 font-medium group-hover:underline">
                 En savoir plus →
               </span>
             </Link>

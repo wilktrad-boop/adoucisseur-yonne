@@ -31,6 +31,14 @@ const allServices: Record<string, Service> = {
     href: "/osmoseur-yonne",
     title: "Osmoseur et filtration de l'eau dans l'Yonne",
   },
+  "adoucisseur-ecologique-yonne": {
+    href: "/adoucisseur-ecologique-yonne",
+    title: "Adoucisseur écologique sans sel dans l'Yonne",
+  },
+  "detartrage-yonne": {
+    href: "/detartrage-yonne",
+    title: "Détartrage et traitement anti-calcaire",
+  },
 };
 
 const resources: Service[] = [

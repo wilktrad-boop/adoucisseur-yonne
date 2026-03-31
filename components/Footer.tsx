@@ -46,6 +46,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/adoucisseur-ecologique-yonne" className="hover:text-white transition">
+                  Adoucisseur écologique
+                </Link>
+              </li>
+              <li>
+                <Link href="/detartrage-yonne" className="hover:text-white transition">
+                  Détartrage anti-calcaire
+                </Link>
+              </li>
+              <li>
                 <Link href="/prix-adoucisseur" className="hover:text-white transition">
                   Prix et devis
                 </Link>

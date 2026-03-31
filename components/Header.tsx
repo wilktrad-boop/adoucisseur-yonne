@@ -30,6 +30,8 @@ export default function Header() {
     { href: "/", label: "Accueil" },
     { href: "/adoucisseur", label: "Adoucisseur" },
     { href: "/osmoseur-yonne", label: "Osmoseur" },
+    { href: "/adoucisseur-ecologique-yonne", label: "Écologique" },
+    { href: "/detartrage-yonne", label: "Détartrage" },
     { href: "/entretien-adoucisseur", label: "Entretien" },
     { href: "/depannage-adoucisseur", label: "Dépannage" },
     { href: "/prix-adoucisseur", label: "Prix" },
