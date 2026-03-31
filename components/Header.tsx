@@ -27,18 +27,12 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: "/", label: "Accueil" },
     { href: "/adoucisseur", label: "Adoucisseur" },
     { href: "/osmoseur-yonne", label: "Osmoseur" },
-    { href: "/adoucisseur-ecologique-yonne", label: "Écologique" },
-    { href: "/detartrage-yonne", label: "Détartrage" },
     { href: "/entretien-adoucisseur", label: "Entretien" },
     { href: "/depannage-adoucisseur", label: "Dépannage" },
-    { href: "/prix-adoucisseur", label: "Prix" },
-    { href: "/qualite-eau-yonne", label: "Qualité eau" },
-    { href: "/guides", label: "Guides" },
     { href: "/villes", label: "Villes" },
-    { href: "/contact", label: "Contact" },
+    { href: "/guides", label: "Guides" },
   ];
 
   return (
